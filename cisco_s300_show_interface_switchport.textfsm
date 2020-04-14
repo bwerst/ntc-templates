@@ -1,0 +1,23 @@
+Value Filldown PORT (\S+)
+Value MODE (\w+)
+Value GVRP (\w+)
+Value INGRESSFILTERING (\w+)
+Value ACCEPTFRAMETYPE (\S+)
+Value INGRESSVLAN (\d+)
+Value VLAN (\d+)
+Value VLANNAME (\S.*?)
+Value EGRESS (Forbidden|Excluded|Tagged|Untagged|Multicast TV VLAN\s)
+Value PMTYPE (\w+)
+Value GROUPID (\d+)
+
+Start
+  ^Port\s:\s+${PORT}
+  ^Port Mode:\s+${MODE}
+  ^Gvrp Status:\s+${GVRP}
+  ^Ingress Filtering:\s+${INGRESSFILTERING}
+  ^Acceptable Frame Type:\s+${ACCEPTFRAMETYPE} -> Record
+  ^Port is member in: -> Record Membership
+
+Membership
+  ^\s${VLAN}\s+${VLANNAME}\s+${EGRESS}\s+${PMTYPE} -> Record
+  ^${VLAN}\s+${VLANNAME}\s+${EGRESS}\s+${PMTYPE} -> Record

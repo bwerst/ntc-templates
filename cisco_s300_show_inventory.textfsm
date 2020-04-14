@@ -1,0 +1,9 @@
+Value NAME (.+)
+Value DESCRIPTION (.*)
+Value PID (\S*)
+Value VID (\S*)
+Value SERIALNUMBER (\S+)
+
+Start
+  ^NAME:\s+"${NAME}"\s+DESCR:\s+"${DESCRIPTION}"
+  ^PID:\s+${PID}\s+VID:\s+${VID}\s+SN:\s+${SERIALNUMBER} -> Record

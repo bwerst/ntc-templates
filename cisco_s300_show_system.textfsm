@@ -1,0 +1,14 @@
+Value DESCRIPTION (.+?)
+Value UPTIME (.+)
+Value CONTACT (\S+)
+Value HOSTNAME (\S+)
+Value LOCATION (\S+)
+Value List MAC ([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){5})
+
+Start
+  ^[sS]ystem\s+[dD]escription:\s+${DESCRIPTION}
+  ^[sS]ystem\s+[uU]p\s+[tT]ime\s+(days,hour:min:sec):\s+{UPTIME}
+  ^[sS]ystem\s+[cC]ontact:\s+${CONTACT}
+  ^[sS]ystem\s+[nN]ame:\s+${HOSTNAME}
+  ^[sS]ystem\s+[lL]ocation:\s+${LOCATION}
+  ^[sS]ystem\s+MAC\s+Address:\s+${MAC}

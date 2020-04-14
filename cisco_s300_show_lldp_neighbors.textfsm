@@ -1,0 +1,9 @@
+Value Port (\S+)
+Value DeviceID (..:..:..:..:..:..:..:..)
+Value PortID (\S+)
+Value SystemName (\S+)
+Value Capabilities (\S*)
+Value TTL (\d+)
+
+Start
+  ^${Port}\s+${DeviceID}\s+${PortID}\s+${SystemName}\s+${Capabilities}\s+${TTL} -> Record

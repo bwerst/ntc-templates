@@ -1,0 +1,8 @@
+Value SOFTWARE (.+?)
+Value BOOT (.+?)
+Value HARDWARE (\S+)
+
+Start
+  ^SW\s+[vV]ersion\s+${SOFTWARE}
+  ^Boot\s+[vV]ersion\s+${BOOT}
+  ^HW\s+[vV]ersion\s+${HARDWARE}

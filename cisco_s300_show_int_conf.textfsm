@@ -1,0 +1,12 @@
+Value Port (\S+)
+Value Type (\S+)
+Value Duplex (\w+)
+Value Speed (\d+)
+Value Neg (\w+)
+Value Control (\w+)
+Value State (\w+)
+Value Pressure (\w+)
+Value Mode (\w+)
+
+Start
+  ^${Port}\s+${Type}\s+${Duplex}\s+${Speed}\s+${Neg}\s+${Control}\s+${State}\s+${Pressure}\s+${Mode} -> Record
