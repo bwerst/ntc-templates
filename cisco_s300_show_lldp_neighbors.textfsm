@@ -1,8 +1,8 @@
 Value Port (\S+)
-Value DeviceID (..:..:..:..:..:..:..:..)
+Value DeviceID (..:..:..:..:..:..)
 Value PortID (\S+)
 Value SystemName (\S+)
-Value Capabilities (\S*)
+Value List Capabilities (\S.+)
 Value TTL (\d+)
 
 Start
